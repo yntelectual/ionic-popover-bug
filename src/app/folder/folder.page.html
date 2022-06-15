@@ -15,7 +15,28 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button id="trigger-button">Click Works</ion-button>
+    <ion-popover trigger="trigger-button">
+      <ng-template>
+        <ion-content>Popover Content</ion-content>
+      </ng-template>
+    </ion-popover>
+
+    <ion-button id="trigger-button2">Context menu does not work</ion-button>
+    <ion-popover trigger="trigger-button2" triggerAction="context-menu">
+      <ng-template>
+        <ion-content>Popover Content</ion-content>
+      </ng-template>
+    </ion-popover>
+
+    <ion-popover trigger="container" triggerAction="context-menu">
+      <div class="p-2 text-4xl flex space-x-2 justify-between">
+        <div class="cursor-pointer text-center">🎯</div>
+        <div class="cursor-pointer text-center">👏</div>
+        <div class="cursor-pointer text-center">😍</div>
+        <div class="cursor-pointer text-center">🧡</div>
+        <div class="cursor-pointer text-center">🙏</div>
+      </div>
+    </ion-popover>
   </div>
 </ion-content>
